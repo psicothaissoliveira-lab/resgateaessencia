@@ -1,0 +1,124 @@
+{
+  "design_system": {
+    "typography": {
+      "font_family": {
+        "heading": "Playfair Display, serif",
+        "body": "Manrope, sans-serif",
+        "accent": "Cormorant Garamond, serif"
+      },
+      "scale": {
+        "h1": "text-5xl md:text-7xl font-medium tracking-tight leading-tight",
+        "h2": "text-4xl md:text-5xl font-normal tracking-tight",
+        "h3": "text-2xl md:text-3xl font-normal",
+        "body_lg": "text-lg md:text-xl leading-relaxed font-light",
+        "body": "text-base leading-relaxed text-muted-foreground",
+        "caption": "text-sm tracking-widest uppercase opacity-70"
+      }
+    },
+    "colors": {
+      "theme": "dark",
+      "palette": {
+        "background": "#1c1917",
+        "foreground": "#fafaf9",
+        "primary": "#be123c",
+        "primary_foreground": "#fff1f2",
+        "secondary": "#292524",
+        "secondary_foreground": "#e7e5e4",
+        "accent": "#b45309",
+        "muted": "#44403c",
+        "border": "#44403c"
+      },
+      "gradients": {
+        "hero_overlay": "linear-gradient(to bottom, rgba(28, 25, 23, 0.3), rgba(28, 25, 23, 1))",
+        "card_glow": "radial-gradient(circle at center, rgba(190, 18, 60, 0.15), transparent 70%)"
+      }
+    },
+    "layout": {
+      "container": "max-w-7xl mx-auto px-6 md:px-12",
+      "spacing": {
+        "section_py": "py-24 md:py-32",
+        "element_gap": "gap-8 md:gap-12"
+      },
+      "grid": {
+        "bento": "grid grid-cols-1 md:grid-cols-3 gap-6",
+        "feature_list": "grid grid-cols-1 md:grid-cols-2 gap-12 items-center"
+      }
+    },
+    "visual_enhancers": {
+      "radius": "rounded-2xl",
+      "shadows": {
+        "card": "0 20px 40px -10px rgba(0,0,0,0.5)",
+        "glow": "0 0 20px rgba(190, 18, 60, 0.3)"
+      },
+      "glassmorphism": "bg-stone-900/40 backdrop-blur-xl border border-white/5",
+      "textures": "noise-overlay opacity-[0.03] pointer-events-none fixed inset-0 z-50"
+    },
+    "animation": {
+      "scroll": "lenis",
+      "reveal": "motion-safe:animate-in fade-in slide-in-from-bottom-8 duration-1000 ease-out",
+      "hover": "transition-all duration-500 ease-out hover:-translate-y-1"
+    }
+  },
+  "components": {
+    "Hero": {
+      "description": "Full-height immersive section with emotional imagery and centered typography.",
+      "structure": "Relative container > Background Image > Gradient Overlay > Content (H1 + Subtext + CTA)",
+      "style": "h-screen min-h-[800px] flex items-center justify-center text-center relative overflow-hidden"
+    },
+    "ModuleCard": {
+      "description": "Glassmorphic card for course modules.",
+      "structure": "Div (Glass) > Icon/Number > Title > Description",
+      "style": "p-8 rounded-2xl border border-white/5 bg-white/5 hover:bg-white/10 transition-colors"
+    },
+    "PriceSection": {
+      "description": "Elegant, minimal pricing display.",
+      "structure": "Section > H2 > Price Display (Large) > CTA > Guarantee Badge",
+      "style": "text-center bg-stone-900/50 py-32 border-y border-white/5"
+    },
+    "TestimonialCard": {
+      "description": "Minimalist card with quote.",
+      "structure": "Card > Quote Icon > Text > Author Name",
+      "style": "bg-stone-800/30 p-8 rounded-xl border border-white/5"
+    }
+  },
+  "assets": {
+    "images": {
+      "hero_bg": "https://images.unsplash.com/photo-1542850064-fc1049b84450?crop=entropy&cs=srgb&fm=jpg&q=85",
+      "about_img": "https://images.unsplash.com/photo-1696864001203-416807def24a?crop=entropy&cs=srgb&fm=jpg&q=85",
+      "texture_1": "https://images.unsplash.com/photo-1767810164592-d167c543f1ea?crop=entropy&cs=srgb&fm=jpg&q=85",
+      "texture_2": "https://images.unsplash.com/photo-1761399976689-0214e851b6f7?crop=entropy&cs=srgb&fm=jpg&q=85"
+    },
+    "icons": "lucide-react (Heart, Sparkles, Moon, Sun, Flower, ArrowRight)"
+  },
+  "instructions_to_main_agent": [
+    "Implement a 'Dark Mode' aesthetic by default using the provided palette.",
+    "Use 'Playfair Display' for all headings to convey elegance and femininity.",
+    "Ensure the 'Hero' section uses the 'hero_bg' image with a heavy gradient overlay to make text readable.",
+    "The 'Modules' section should use a Bento Grid layout with glassmorphic cards.",
+    "The price (R$ 47) should be displayed prominently with a 'Gold' or 'Rose' accent color.",
+    "Use 'framer-motion' for subtle entrance animations (fade-up) on scroll.",
+    "Do NOT use standard Shadcn cards; create custom glassmorphic containers.",
+    "Ensure all text has high contrast against the dark background (use 'text-stone-100' or 'text-stone-300').",
+    "Add a subtle noise texture overlay to the entire body for a 'film/organic' feel."
+  ],
+  "UNIVERSAL_GUIDELINES_FOR_MAIN_AGENT": [
+    "Dark colors look good when used independently without gradients. DO NOT use dark colors as gradients",
+    "Don't make generic centered layouts, simplistic gradients, and uniform styling.",
+    "Create depth through layered design elements with z-index hierarchy",
+    "Use glass-morphism effects with backdrop filters (12-24px blur)",
+    "You MUST NOT apply universal transition. Eg: `transition: all`. This results in breaking transforms. Always add transitions for specific interactive elements like button, input excluding transforms",
+    "You MUST NOT center align the app container, ie do not add `.App { text-align: center; }` in the css file. This disrupts the human natural reading flow of text",
+    "Always use modern button styles like pill-shaped, or sharp button with interaction animations & color relevant to the app style",
+    "NEVER: use AI assistant Emoji characters like 🤖🧠💭💡🔮🎯📚🎭🎬🎪🎉🎊🎁🎀🎂🍰🎈🎨🎰💰💵💳🏦💎🪙💸🤑📊📈📉💹🔢🏆🥇 etc for icons.",
+    "Every interaction needs micro-animations - hover states, transitions, parallax effects, and entrance animations. Static = dead.",
+    "Use 2-3x more spacing than feels comfortable. Cramped designs look cheap.",
+    "Subtle grain textures, noise overlays, custom cursors, selection states, and loading animations: separates good from extraordinary.",
+    "Main agent relies on these image URLs. Missing categories (especially sponsor logos) = main agent will use placeholder text which is FORBIDDEN",
+    "Prioritize using pre-existing components from src/components/ui when applicable",
+    "Create new components that match the style and conventions of existing components when needed",
+    "Examine existing components to understand the project's component patterns before creating new ones",
+    "Components MUST use named exports (export const ComponentName = ...)",
+    "Pages MUST use default exports (export default function PageName() {...})",
+    "Use `sonner` for toasts. Sonner component are located in `/app/src/components/ui/sonner.tsx`"
+  ]
+}
